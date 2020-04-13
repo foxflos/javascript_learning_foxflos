@@ -1,23 +1,25 @@
 'use strict';
-let money,
-    time;
-money = +prompt("Ваш бюджет на месяц?");
-time = prompt("Введите дату в формате YYYY-MM-DD");
+let money = +prompt("Ваш бюджет на месяц?", ""),
+    time = prompt("Введите дату в формате YYYY-MM-DD", "");
 
-let howMuch;
 let appData = {
-    dataMoney: money,
-    dataTime: time,
-    expenses: {
-        necessary: howMuch
-    },
+    budget: money,
+    timeData: time,
+    expenses: {},
     optionalExpenses: {},
     income: [],
     savings: false
 };
-appData.expenses.necessary = prompt("Введите обязательную статью расходов в этом месяце");
-appData.expenses.howMuch = prompt("Во сколько обойдется?");
-alert("Ваш бюджет на 1 день " + appData.dataMoney / 30);
+let
+    expense1 = prompt("Введите обязательную статью расходов в этом месяце", ""),
+    expense1Amount = prompt("Во сколько обойдется?", ""),
+    expense2 = prompt("Введите обязательную статью расходов в этом месяце", ""),
+    expense2Amount = prompt("Во сколько обойдется?", "");
+
+appData.expenses.expense1 = expense1Amount;
+appData.expenses.expense2 = expense2Amount;
+
+alert("Ваш бюджет на 1 день " + appData.budget / 30);
 
 /*
 Сколько типов данных существует в JS?
