@@ -42,7 +42,7 @@ function chooseExpenses() {
             console.log("done");
             appData.expenses[expense] = expenseAmount;
         } else {
-            alert("Вы допустили ошибку при вводе данных. Попробуйте снова ");
+            alert("Вы допустили ошибку при вводе данных. Попробуйте снова", "");
             i--;
         }
     }
@@ -60,7 +60,7 @@ while(i < 2) {
         console.log("done");
         appData.expenses[expense] = expenseAmount;
     } else {
-        alert("Вы допустили ошибку при вводе данных. Попробуйте снова ");
+        alert("Вы допустили ошибку при вводе данных. Попробуйте снова", "");
         i--;
     }
 }
@@ -78,7 +78,7 @@ do {
         console.log("done");
         appData.expenses[expense] = expenseAmount;
     } else {
-        alert("Вы допустили ошибку при вводе данных. Попробуйте снова ");
+        alert("Вы допустили ошибку при вводе данных. Попробуйте снова", "");
         i--;
     }
 } while (i<2);
@@ -121,8 +121,8 @@ console.log();
 
 function checkSavings() {
     if (appData.savings == true) {
-        let save = +prompt("Ваша сумма накоплений? "),
-            percent = +prompt("Под какой процент? ");
+        let save = +prompt("Ваша сумма накоплений?", ""),
+            percent = +prompt("Под какой процент?", "");
         appData.mounthIncome = save / 100 / 12 * percent;
         alert(`Ваш доход в месяц с депозита: ${appData.mounthIncome}`);
     }
@@ -131,9 +131,12 @@ checkSavings();
 
 function chooseOptExpenses() {
     for (let i = 1; i <= 3; i++) {
-        appData.optionalExpenses[i] = prompt(`Статья необязательных расходов?`);
+        appData.optionalExpenses[i] = prompt("Статья необязательных расходов?", "");
     }
 }
 chooseOptExpenses();
 /* Что значит () после названия функции? 
-Вызов функции */
+При создании функции, в круглых скобках указываются параметры функции. 
+Так же, в коде, добавляя круглые скобки к имени функции, мы её вызываем - имя_функции().
+При вызове можно передать аргументы, перечислив их в скобках.
+ */
